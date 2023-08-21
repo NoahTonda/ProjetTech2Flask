@@ -1,0 +1,25 @@
+{% extends "layout.html" %}
+{% block content %}
+
+    <br> <h2>Nos pizzas</h2><!-- <pre> {{ liste_pizza }} </pre> -->
+    <div class="album py-5 bg-light">
+        <div class="container">
+            <div class="row row-cols-1 row-cols-sm-1 row-cols-md-3 g-3"> {% for pizza in liste_pizzas %}
+                <div class="col">
+                    <div class="card shadow-sm">
+                        <div class="card-body"><p class="card-text">
+                            <!-- Pour debug Produit {{ pizza.id_pizza }} et catégorie {{ pizza.id_cat }}-->
+                            <span class="titre"> {{ pizza.nom_cat }} </span><br> {{ pizza.nom_pizza }}
+                            <br>{{ pizza.prix }} €</p>
+                            <div class="d-flex justify-content-between align-items-center">
+                                <div class="btn-group" id="remove_a"></div>
+                                <div class="btn-group"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            {% endfor %} </div>
+        </div>
+    </div>
+{% endblock content %}

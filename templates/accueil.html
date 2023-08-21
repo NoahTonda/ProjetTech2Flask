@@ -1,0 +1,52 @@
+{% extends "layout.html" %}
+{% block content %}
+
+    <div class="container md">
+        <div>
+            <div class="mt-5 align-center-right bg-body-tertiary bg-opacity-75 ">
+                <h2>🍕 Bienvenue chez PizzAway - Votre Destination Savoureuse pour les Pizzas ! 🍕</h2>
+                <p>Laissez-nous combler vos envies gourmandes avec nos délicieuses créations de pizzas fraîchement
+                    préparées. Chez PizzAway, nous croyons que chaque morceau doit être une explosion de saveurs, chaque
+                    bouchée une expérience mémorable.</p>
+                <p>Découvrez notre menu diversifié, allant des classiques incontournables aux créations uniques,
+                    élaborées avec les ingrédients les plus frais et les combinaisons les plus audacieuses. Chaque pizza
+                    est soigneusement conçue pour éveiller vos papilles et satisfaire vos désirs culinaires.</p>
+                <p>Notre engagement envers la qualité se reflète dans chaque étape, de la sélection des ingrédients à la
+                    cuisson au four, pour vous offrir une expérience gastronomique exceptionnelle dans le confort de
+                    votre foyer. Et n'oublions pas la rapidité - notre service de livraison dédié veille à ce que votre
+                    pizza chaude et appétissante arrive directement à votre porte, à chaque fois.</p>
+                <p>Que vous organisiez une soirée entre amis, une nuit de cinéma en famille ou que vous ayez simplement
+                    envie de vous régaler, PizzAway est là pour vous servir. Parce que pour nous, chaque pizza n'est pas
+                    seulement une commande, c'est une opportunité de vous faire sourire.</p>
+                <p>Explorez notre menu, passez votre commande et préparez-vous à une expérience gustative incomparable.
+                    Merci de choisir PizzAway - où chaque pizza vous emmène dans un voyage de saveurs inoubliable !</p>
+                <p>L'équipe PizzAway</p>
+            </div>
+
+        </div>
+    </div>
+    <div class="album py-5 bg-light">
+        <div class="container">
+            <div class="row row-cols-1 row-cols-sm-1 row-cols-md-3 g-3">
+
+                {% for cat in liste_cat %}
+                    <div class="col">
+                        <div class="card shadow-sm">
+                            <div class="card-body"><p class="card-text">
+                                <span class="titre">
+                                    <a href="{{ url_for('pizzas_categorie') }}?id_cat={{ cat.id_cat }}">{{ cat.nom_cat }}</a>
+                                </span>
+                            </p>
+                                <div class="d-flex justify-content-between align-items-center">
+                                    <div class="btn-group" id="remove_a"></div>
+                                    <div class="btn-group"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                {% endfor %} </div>
+        </div>
+    </div>
+{% endblock content %}
+
